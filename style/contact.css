@@ -1,0 +1,50 @@
+/* Basic reset and body styles */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9; /* Another slightly different light gray */
+    color: #333;
+    display: flex; /* Enable flexbox for centering content */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically in the viewport */
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+}
+
+/* Style for the main heading */
+h1 {
+    font-size: 2.5em;
+    color: #27ae60; /* A green accent color for contact */
+    margin-bottom: 30px;
+}
+
+/* Style for the unordered list of contact links */
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center; /* Center the list items */
+}
+
+/* Style for each list item (link container) */
+ul li {
+    margin-bottom: 15px;
+}
+
+/* Style for the links */
+a {
+    display: inline-block; /* Make the whole link clickable */
+    padding: 10px 20px;
+    background-color: #fff; /* White background for the link button */
+    color: #27ae60; /* Green link text */
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #ddd; /* Light gray border */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+a:hover {
+    background-color: #27ae60; /* Green background on hover */
+    color: #fff; /* White text on hover */
+}

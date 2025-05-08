@@ -1,0 +1,93 @@
+/* Basic reset to ensure consistent styling across browsers */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; /* A common and readable default font */
+    line-height: 1.6; /* Improves readability of text */
+    background-color: #f4f4f4; /* A light gray background */
+    color: #333; /* A dark gray text color */
+}
+
+/* Style for the main heading */
+h1 {
+    font-size: 2.5em; /* Larger font size */
+    text-align: center; /* Center the heading */
+    margin-top: 20px; /* Add some space above */
+    margin-bottom: 10px; /* Add some space below */
+    color: #007bff; /* A common blue for emphasis */
+}
+
+/* Style for the subheading */
+h2 {
+    font-size: 1.8em; /* Slightly smaller than the main heading */
+    color: #555; /* A slightly lighter gray */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Style for the horizontal rule */
+hr {
+    border: 1px solid #ccc; /* Light gray line */
+    margin: 20px 0; /* Space above and below */
+}
+
+/* Style for the profile image */
+img {
+    display: block; /* Prevent inline spacing issues */
+    margin: 20px auto; /* Center the image */
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+/* Style for the unordered lists */
+ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 8px; /* Add some space between list items */
+}
+
+/* Style for the links */
+a {
+    color: #007bff; /* Blue links */
+    text-decoration: none; /* Remove underlines by default */
+}
+
+a:hover {
+    text-decoration: underline; /* Add underline on hover for better usability */
+}
+
+/* Style for the bold text */
+b {
+    font-weight: bold; /* Make text bold */
+}
+
+/* Style for the footer */
+footer {
+    text-align: center; /* Center the footer content */
+    margin-top: 30px;
+    padding: 10px 0;
+    background-color: #333; /* Dark background for the footer */
+    color: #f4f4f4; /* Light text color for the footer */
+}
+
+footer ul {
+    padding: 0;
+    list-style: none;
+    display: inline-block; /* Keep list items on one line */
+}
+
+footer li {
+    display: inline; /* Display list items inline */
+    margin: 0 10px; /* Spacing between footer links */
+}
+
+footer a {
+    color: #f4f4f4; /* Light link color in the footer */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

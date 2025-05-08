@@ -1,0 +1,54 @@
+/* Basic reset and body styles */
+body {
+    margin: 0;
+    padding: 20px; /* Add some padding around the content */
+    font-family: sans-serif;
+    line-height: 1.7; /* Slightly increased line height for better readability of longer text */
+    background-color: #f8f8f8; /* A slightly different light gray */
+    color: #444; /* A slightly lighter dark gray for body text */
+}
+
+/* Style for the main heading */
+h1 {
+    font-size: 2.8em; /* Slightly larger for the page title */
+    color: #2c3e50; /* A darker, more sophisticated color */
+    text-align: center;
+    margin-bottom: 30px; /* More space below the main title */
+}
+
+/* Style for the subheadings */
+h2 {
+    font-size: 2em;
+    color: #3498db; /* A different accent color */
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee; /* Subtle bottom border for separation */
+    padding-bottom: 5px;
+}
+
+/* Style for paragraphs */
+p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* Style for the bold text within paragraphs (for emphasis) */
+p b {
+    font-weight: bold;
+    color: #333; /* Darker color for emphasized text */
+}
+
+/* You can add more specific styles for the divs if needed,
+   but these basic styles will get you started. For example: */
+
+/* #education-story {
+    margin-bottom: 30px;
+}
+
+#current-endeavors {
+    margin-bottom: 30px;
+}
+
+#personal-interests {
+    /* Add specific styling if needed */
+} */
