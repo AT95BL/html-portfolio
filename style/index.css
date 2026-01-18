@@ -103,16 +103,48 @@ footer {
     text-align: center;
 }
 
+/* Footer Navigation Styling */
 footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the buttons */
     list-style: none;
-    padding: 0;
+    padding: 20px 0;
 }
 
-footer li {
-    display: inline;
-    margin: 0 15px;
+footer button {
+    background-color: #007bff; /* Matching your primary blue */
+    border: none;
+    border-radius: 5px;
+    padding: 0; /* Remove default padding to let the link fill the space */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-footer a {
-    color: #f4f4f4;
+footer button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight "lift" effect */
+}
+
+footer button:active {
+    transform: translateY(0); /* Press down effect */
+}
+
+/* Make the link fill the entire button area */
+footer button li {
+    margin: 0;
+}
+
+footer button a {
+    display: block;
+    padding: 12px 25px; /* Control button size here */
+    color: white !important; /* Ensure text stays white */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+footer button a:hover {
+    text-decoration: none; /* Remove underline for buttons */
 }

@@ -1,50 +1,102 @@
-/* Basic reset and body styles */
+/* 1. Layout & Centering */
 body {
     margin: 0;
     padding: 20px;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9; /* Another slightly different light gray */
+    background-color: #f4f7f6; /* Soft professional gray */
     color: #333;
-    display: flex; /* Enable flexbox for centering content */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically in the viewport */
-    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-/* Style for the main heading */
+/* 2. Header Styling */
 h1 {
-    font-size: 2.5em;
-    color: #27ae60; /* A green accent color for contact */
-    margin-bottom: 30px;
+    font-size: 2.2rem;
+    color: #2c3e50; /* Deep navy/charcoal for a serious tone */
+    margin-bottom: 40px;
+    text-align: center;
 }
 
-/* Style for the unordered list of contact links */
+/* 3. Container & List */
+#contact-links {
+    width: 100%;
+    max-width: 450px; /* Optimal width for mobile and desktop buttons */
+}
+
 ul {
     list-style: none;
     padding: 0;
-    text-align: center; /* Center the list items */
+    width: 100%;
 }
 
-/* Style for each list item (link container) */
 ul li {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-/* Style for the links */
+/* 4. Link Button Styling */
 a {
-    display: inline-block; /* Make the whole link clickable */
-    padding: 10px 20px;
-    background-color: #fff; /* White background for the link button */
-    color: #27ae60; /* Green link text */
+    display: flex; /* Helps align icon and text perfectly */
+    align-items: center;
+    justify-content: center;
+    padding: 18px 25px;
+    background-color: #ffffff;
+    color: #333;
     text-decoration: none;
-    border-radius: 5px;
-    border: 1px solid #ddd; /* Light gray border */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/* 5. Icon Styling */
+a i {
+    margin-right: 15px; /* Space between logo and text */
+    font-size: 1.4rem;
+}
+
+/* 6. Brand-Specific Hover Logic */
+
+/* GitHub - Dark Gray/Black */
+li:nth-child(1) a:hover {
+    background-color: #24292e;
+    color: #fff;
+    border-color: #24292e;
+}
+
+/* LinkedIn - Professional Blue */
+li:nth-child(2) a:hover {
+    background-color: #0077b5;
+    color: #fff;
+    border-color: #0077b5;
+}
+
+/* Linktree - Bright Green */
+li:nth-child(3) a:hover {
+    background-color: #43e660;
+    color: #1e1e1e;
+    border-color: #43e660;
+}
+
+/* Frontend Mentor - Purple/Blue */
+li:nth-child(4) a:hover {
+    background-color: #3e54a3;
+    color: #fff;
+    border-color: #3e54a3;
+}
+
+/* Subtle "Pop" effect on hover */
 a:hover {
-    background-color: #27ae60; /* Green background on hover */
-    color: #fff; /* White text on hover */
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Active state for mobile tapping */
+a:active {
+    transform: translateY(-1px);
 }
