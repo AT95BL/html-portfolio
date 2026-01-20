@@ -12,6 +12,29 @@
         <h1>Andrej Trožić</h1>
         <h2>Software Engineer</h2>
         <img src="./images/profileImage1.jfif" height="200" alt="User Profile Picture">
+
+        <button id="theme-toggle" style="position: fixed; top: 20px; right: 20px; padding: 10px; cursor: pointer; border-radius: 50%;">🌓</button>
+
+        <script>
+            const btn = document.getElementById("theme-toggle");
+            const htmlElement = document.documentElement;
+
+            // 1. Check for saved theme on page load
+            const savedTheme = localStorage.getItem("theme") || "light";
+            htmlElement.setAttribute("data-theme", savedTheme);
+
+            // 2. Toggle theme and save preference
+            if (btn) {
+                btn.addEventListener("click", () => {
+                    const currentTheme = htmlElement.getAttribute("data-theme");
+                    const targetTheme = currentTheme === "dark" ? "light" : "dark";
+                    
+                    htmlElement.setAttribute("data-theme", targetTheme);
+                    localStorage.setItem("theme", targetTheme); // Save it!
+                });
+            }
+        </script>
+
     </div>
     <hr />
 
@@ -193,6 +216,7 @@
         <ul>
             <button><li><a href="./aboutMe.html" target="_blank">About Me</a></li></button>
             <button><li><a href="./contact.html" target="_blank">Contact</a></li></button>
+            <button onclick="window.print()" class="no-print"><li><a>🖨️ Download PDF Version</a></li></button>
         </ul>
     </footer>
 </body>

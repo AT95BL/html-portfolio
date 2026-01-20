@@ -11,6 +11,28 @@
         <h1>About Me</h1>
     </div>
 
+    <button id="theme-toggle" style="position: fixed; top: 20px; right: 20px; padding: 10px; cursor: pointer; border-radius: 50%;">🌓</button>
+
+        <script>
+            const btn = document.getElementById("theme-toggle");
+            const htmlElement = document.documentElement;
+
+            // 1. Check for saved theme on page load
+            const savedTheme = localStorage.getItem("theme") || "light";
+            htmlElement.setAttribute("data-theme", savedTheme);
+
+            // 2. Toggle theme and save preference
+            if (btn) {
+                btn.addEventListener("click", () => {
+                    const currentTheme = htmlElement.getAttribute("data-theme");
+                    const targetTheme = currentTheme === "dark" ? "light" : "dark";
+                    
+                    htmlElement.setAttribute("data-theme", targetTheme);
+                    localStorage.setItem("theme", targetTheme); // Save it!
+                });
+            }
+        </script>
+
     <div id="education-story">
         <h2>Schooling and 🎓Education</h2>
         <p>After finishing elementary school in Banja Luka, I wasn’t quite sure which path to take next.
