@@ -17,6 +17,30 @@
     --accent-color: #3793ff;
 }
 
+/* Language Toggle Logic */
+[data-lang="sr"] .lang-en {
+    display: none;
+}
+
+[data-lang="en"] .lang-sr {
+    display: none;
+}
+
+/* Style for the language button */
+#lang-toggle {
+    position: fixed;
+    top: 20px;
+    right: 80px; /* Positioned next to your theme toggle */
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    font-weight: bold;
+}
+
+
 /* Change this section in your index.css */
 body {
     margin: 0;
@@ -166,28 +190,7 @@ footer button a:hover {
     text-decoration: none; /* Remove underline for buttons */
 }
 
-/* Language Toggle Logic */
-[data-lang="sr"] .lang-en {
-    display: none;
-}
 
-[data-lang="en"] .lang-sr {
-    display: none;
-}
-
-/* Style for the language button */
-#lang-toggle {
-    position: fixed;
-    top: 20px;
-    right: 80px; /* Positioned next to your theme toggle */
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 8px;
-    background: var(--card-bg);
-    color: var(--text-color);
-    border: 1px solid var(--accent-color);
-    font-weight: bold;
-}
 
 
 
