@@ -10,234 +10,269 @@
 
     <div id="header">
         <h1>Andrej Trožić</h1>
-        <h2>Software Engineer</h2>
+        <h2 class="lang-en">Software Engineer</h2>
+        <h2 class="lang-sr">Softverski inženjer</h2>
         <img src="./images/profileImage1.jfif" height="200" alt="User Profile Picture">
 
+        <button id="lang-toggle" style="position: fixed; top: 20px; right: 80px; padding: 10px; cursor: pointer; border-radius: 8px;">SR | EN</button>
         <button id="theme-toggle" style="position: fixed; top: 20px; right: 20px; padding: 10px; cursor: pointer; border-radius: 50%;">🌓</button>
 
         <script>
             const btn = document.getElementById("theme-toggle");
+            const langBtn = document.getElementById("lang-toggle");
             const htmlElement = document.documentElement;
 
-            // 1. Check for saved theme on page load
             const savedTheme = localStorage.getItem("theme") || "light";
             htmlElement.setAttribute("data-theme", savedTheme);
 
-            // 2. Toggle theme and save preference
             if (btn) {
                 btn.addEventListener("click", () => {
                     const currentTheme = htmlElement.getAttribute("data-theme");
                     const targetTheme = currentTheme === "dark" ? "light" : "dark";
-                    
                     htmlElement.setAttribute("data-theme", targetTheme);
-                    localStorage.setItem("theme", targetTheme); // Save it!
+                    localStorage.setItem("theme", targetTheme);
+                });
+            }
+
+            const savedLang = localStorage.getItem("language") || "en";
+            htmlElement.setAttribute("data-lang", savedLang);
+
+            if (langBtn) {
+                langBtn.addEventListener("click", () => {
+                    const currentLang = htmlElement.getAttribute("data-lang");
+                    const targetLang = currentLang === "en" ? "sr" : "en";
+                    htmlElement.setAttribute("data-lang", targetLang);
+                    localStorage.setItem("language", targetLang);
                 });
             }
         </script>
-
     </div>
     <hr />
 
     <div id="education">
-        <h2>🎓Education</h2>
-        <h3><a href="https://www.pitagora.edu.rs/" target="_blank">Economics technician high school Pitagora Novi Sad</a></h3>
-        <p>Economics technician (2010-2014)</p>
-        <h3><a href="https://etf.unibl.org/" target="_blank">Final Year Software Engineering student at Faculty of Electrical Engineering Banja Luka</a></h3>
-        <p><b>Currently Learning Web-Development</b></p>
+        <h2 class="lang-en">🎓Education</h2>
+        <h2 class="lang-sr">🎓Obrazovanje</h2>
+        
+        <h3><a href="https://www.pitagora.edu.rs/" target="_blank">
+            <span class="lang-en">Economics technician high school Pitagora Novi Sad</span>
+            <span class="lang-sr">Srednja ekonomska škola "Pitagora" Novi Sad</span>
+        </a></h3>
+        <p class="lang-en">Economics technician (2010-2014)</p>
+        <p class="lang-sr">Ekonomski tehničar (2010-2014)</p>
+
+        <h3><a href="https://etf.unibl.org/" target="_blank">
+            <span class="lang-en">Final Year Software Engineering student at Faculty of Electrical Engineering Banja Luka</span>
+            <span class="lang-sr">Apsolvent softverskog inženjerstva na Elektrotehničkom fakultetu Banja Luka</span>
+        </a></h3>
+        <p><b>
+            <span class="lang-en">Currently Learning Web-Development</span>
+            <span class="lang-sr">Trenutno učim Web razvoj</span>
+        </b></p>
     </div>
     <hr/>
 
     <div id="career-objective">
-        <h2>🎯Career Objective</h2>
-        <p>Motivated Software Engineering student with a strong foundation in programming,
-            algorithms, and hardware. 
-            Eager to apply academic knowledge and hands-on experience to
-            real-world projects. Open to <b>internship and job opportunities</b> to gain further industry
-            experience.</p>
+        <h2 class="lang-en">🎯Career Objective</h2>
+        <h2 class="lang-sr">🎯Cilj karijere</h2>
+        <p class="lang-en">Motivated Software Engineering student with a strong foundation in programming, algorithms, and hardware. Eager to apply academic knowledge and hands-on experience to real-world projects. Open to <b>internship and job opportunities</b> to gain further industry experience.</p>
+        <p class="lang-sr">Motivisani student softverskog inženjerstva sa jakom osnovom u programiranju, algoritmima i hardveru. Željan primjene akademskog znanja i praktičnog iskustva na stvarnim projektima. Otvoren za <b>stručne prakse i poslovne prilike</b> radi daljeg usavršavanja.</p>
     </div>
     <hr/>
 
     <div id="skills-expertise">
-        <h2>🛠️Skills & Expertise</h2>
+        <h2 class="lang-en">🛠️Skills & Expertise</h2>
+        <h2 class="lang-sr">🛠️Vještine i ekspertiza</h2>
         <ul>
-            <li><b>C/C++</b> – Strong theoretical foundation through academic work, with practical
-                experience in memory management, low-level programming, and
-                systems-level concepts such as computer architecture and pointers.​
+            <li><b>C/C++</b> – 
+                <span class="lang-en">Strong theoretical foundation through academic work, with practical experience in memory management, low-level programming, and systems-level concepts.</span>
+                <span class="lang-sr">Jaka teorijska osnova kroz akademski rad, sa praktičnim iskustvom u upravljanju memorijom, niskonivojskim programiranjem i sistemskim konceptima.</span>
             </li>
-            <li><b>JAVA</b> – Experience with OOP, multithreading, and GUI development through
-                academic coursework and personal projects. Confident in applying Java to
-                real-world problem-solving.​
+            <li><b>JAVA</b> – 
+                <span class="lang-en">Experience with OOP, multithreading, and GUI development through academic coursework and personal projects.</span>
+                <span class="lang-sr">Iskustvo sa objektno-orijentisanim programiranjem, višenitnošću i razvojem GUI aplikacija kroz fakultetske i lične projekte.</span>
             </li>
-            <li><b>Python, C#</b> – Comfortable using Python for scripting and development;
-                foundational knowledge of C#, with ongoing learning and interest in
-                deepening expertise.​
+            <li><b>Python, C#</b> – 
+                <span class="lang-en">Comfortable using Python for scripting and development; foundational knowledge of C#.</span>
+                <span class="lang-sr">Rad u Python-u za skriptovanje i razvoj; osnovno poznavanje C# uz kontinuirano usavršavanje.</span>
             </li>
-            <li><b>Computer Hardware</b> – Hands-on experience in assembling PCs, selecting
-                compatible components, diagnosing hardware issues, and performing
-                maintenance and upgrades.
-            ​</li>
-            <li><b>Web Development</b> – Currently learning and building projects using HTML,
-                CSS, JavaScript, Node.js, EJS, and React. Focused on developing
-                responsive user interfaces, dynamic content rendering, and backend
-                integration.​
+            <li><b>Computer Hardware</b> – 
+                <span class="lang-en">Hands-on experience in assembling PCs, diagnosing hardware issues, and performing maintenance.</span>
+                <span class="lang-sr">Praktično iskustvo u sastavljanju računara, dijagnostici hardverskih problema i održavanju komponenti.</span>
             </li>
-            <li><b>Databases</b> – Knowledge of SQL and relational database concepts.
-                Experience with tools like pgAdmin for managing PostgreSQL databases.
-            ​</li>
-            <li><b>DevOps (m:tel) Internship</b> – Gained hands-on experience with monitoring
-                tools (Zabbix, Prometheus), scripting (Python, Bash), and managing server
-                environments. Worked on real-world tasks related to infrastructure monitoring
-                and automation.
+            <li><b>Web Development</b> – 
+                <span class="lang-en">Currently learning and building projects using HTML, CSS, JavaScript, Node.js, EJS, and React.</span>
+                <span class="lang-sr">Trenutno učenje i izrada projekata koristeći HTML, CSS, JavaScript, Node.js, EJS i React.</span>
             </li>
-            <li>
-                <b>Computer Networks</b> – Networking concepts, including OSI model, IP
-                addressing, subnetting, routing, and common protocols (TCP/IP, HTTP, DNS).​
+            <li><b>Databases</b> – 
+                <span class="lang-en">Knowledge of SQL and relational database concepts. Experience with PostgreSQL.</span>
+                <span class="lang-sr">Poznavanje SQL-a i koncepta relacionih baza podataka. Iskustvo sa PostgreSQL-om.</span>
+            </li>
+            <li><b>DevOps (m:tel) Internship</b> – 
+                <span class="lang-en">Gained hands-on experience with monitoring tools (Zabbix, Prometheus) and scripting.</span>
+                <span class="lang-sr">Praksa u m:tel-u; rad sa alatima za monitoring (Zabbix, Prometheus) i skriptovanjem (Python, Bash).</span>
+            </li>
+            <li><b>Computer Networks</b> – 
+                <span class="lang-en">Networking concepts, OSI model, IP addressing, and common protocols (TCP/IP, HTTP).</span>
+                <span class="lang-sr">Mrežni koncepti, OSI model, IP adresiranje i protokoli (TCP/IP, HTTP, DNS).</span>
                 <a href="https://github.com/AT95BL/Computer-Networks-Administration" target="_blank">
-                <br>(Check Out My Course Materials ..)</a>
+                <br><span class="lang-en">(Check Out My Course Materials ..)</span><span class="lang-sr">(Pogledajte materijale sa kursa ..)</span></a>
             </li>
-            <li><b>Git & GitHub</b> – Proficient in using Git for version control and GitHub for
-                collaborative code development.
-​            </li>
-            <li>
-                <b>Teamwork & Collaboration</b> – Comfortable working in teams.​
+            <li><b>Git & GitHub</b> – 
+                <span class="lang-en">Proficient in using Git for version control and collaborative development.</span>
+                <span class="lang-sr">Napredno korištenje Git-a za kontrolu verzija i kolaborativni razvoj koda.</span>
             </li>
         </ul>
     </div>
     <hr/>
 
     <section id="relevant-courses">
-        <h2>📚 Relevant Courses </h2>
+        <h2 class="lang-en">📚 Relevant Courses</h2>
+        <h2 class="lang-sr">📚 Relevantni predmeti</h2>
         <ul>
             <li>
-                <a href="https://github.com/AT95BL/ETF-UNIBL" target="_blank"><strong>📐 Mathematics:</strong></a>
-                 Linear Algebra, Analysis, Discrete Math, Statistics
+                <a href="https://github.com/AT95BL/ETF-UNIBL" target="_blank"><strong><span class="lang-en">📐 Mathematics:</span><span class="lang-sr">📐 Matematika:</span></strong></a>
+                <span class="lang-en">Linear Algebra, Analysis, Discrete Math, Statistics</span>
+                <span class="lang-sr">Linearna algebra, Analiza, Diskretna matematika, Statistika</span>
             </li>
-            <li><a href="https://github.com/AT95BL/ETF-UNIBL" target="_blank"><strong>⚡ Electrical Engineering:</strong></a>
-                AC/DC Circuits, Electrostatics, Electromagnetics
+            <li>
+                <a href="https://github.com/AT95BL/ETF-UNIBL" target="_blank"><strong><span class="lang-en">⚡ Electrical Engineering:</span><span class="lang-sr">⚡ Elektrotehnika:</span></strong></a>
+                <span class="lang-en">AC/DC Circuits, Electrostatics, Electromagnetics</span>
+                <span class="lang-sr">Osnove elektrotehnike, Elektrostatika, Elektromagnetizam</span>
             </li>
-            <li><a href="https://github.com/AT95BL/OEiDT-Osnovi-Elektronike-i-Digitalne-Tehnike" target="_blank"><strong>📟 Electronics:</strong></a> 
-                Digital Logic Design, Signals & Telecommunications
+            <li>
+                <a href="https://github.com/AT95BL/OEiDT-Osnovi-Elektronike-i-Digitalne-Tehnike" target="_blank"><strong><span class="lang-en">📟 Electronics:</span><span class="lang-sr">📟 Elektronika:</span></strong></a>
+                <span class="lang-en">Digital Logic Design, Signals & Telecommunications</span>
+                <span class="lang-sr">Digitalna elektronika, Signali i telekomunikacije</span>
             </li>
         </ul>
     </section>
     <hr>
 
     <div id="projects-academic-work">
-        <h2>💼Projects </h2>
+        <h2 class="lang-en">💼Projects </h2>
+        <h2 class="lang-sr">💼Projekti </h2>
         <ul>
-            <li><a href="https://github.com/AT95BL/CPU-Emulator-in-Java" target="_blank">
-                <b>CPU Emulator (Java):</b></a>
-                Designed and implemented a CPU emulator in Java. ​
-                This project provided hands-on experience in simulating crucial components of a
-                computer system, focusing on:​
+            <li>
+                <a href="https://github.com/AT95BL/CPU-Emulator-in-Java" target="_blank">
+                    <b>CPU Emulator (Java):</b>
+                </a>
+                <span class="lang-en">Designed and implemented a CPU emulator in Java. This project provided hands-on experience in simulating crucial components of a computer system, focusing on:</span>
+                <span class="lang-sr">Dizajnirao i implementirao emulator procesora u Javi. Ovaj projekat je pružio praktično iskustvo u simulaciji ključnih komponenti računarskog sistema, fokusirajući se na:</span>
                 <ul>
                     <li>
-                        <b>CPU Operation:</b>Emulation of instruction execution and data manipulation.
+                        <b>CPU Operation:</b>
+                        <span class="lang-en">Emulation of instruction execution and data manipulation.</span>
+                        <span class="lang-sr">Emulacija izvršavanja instrukcija i manipulacija podacima.</span>
                     </li>
                     <li>
-                        <b>Cache Memory Simulation:</b>Implementing caching policies and demonstrating
-                        cache hit/miss scenarios.
+                        <b>Cache Memory Simulation:</b>
+                        <span class="lang-en">Implementing caching policies and demonstrating cache hit/miss scenarios.</span>
+                        <span class="lang-sr">Implementacija politika keširanja i demonstracija scenarija pogodaka/promašaja keša.</span>
                     </li>
                     <li>
-                        <b>RAM Interaction:</b>Simulating data flow and addressing schemes with main
-                        memory.
+                        <b>RAM Interaction:</b>
+                        <span class="lang-en">Simulating data flow and addressing schemes with main memory.</span>
+                        <span class="lang-sr">Simulacija protoka podataka i adresnih šema sa glavnom memorijom.</span>
                     </li>
                 </ul>
             </li>
             <li>
                 <a href="https://github.com/AT95BL/Image-Convolution-in-Cpp" target="_blank">
-                    <b>Image Convolution Project in C++:</b></a> Created a C++ application for image
-                processing, focusing on convolution operations. The project's primary goal was to
-                illustrate and measure the significant speed differences between standard
-                convolution implementations and those optimized using SIMD (Single Instruction,
-                Multiple Data) instructions.​
+                    <b>Image Convolution Project in C++:</b>
+                </a>
+                <span class="lang-en">Created a C++ application for image processing, focusing on convolution operations. The project's primary goal was to illustrate and measure the significant speed differences between standard convolution implementations and those optimized using SIMD (Single Instruction, Multiple Data) instructions.</span>
+                <span class="lang-sr">Kreirao C++ aplikaciju za obradu slika, fokusirajući se na operacije konvolucije. Primarni cilj projekta bio je da ilustruje i izmjeri značajne razlike u brzini između standardnih implementacija konvolucije i onih optimizovanih pomoću SIMD instrukcija.</span>
             </li>
             <li>
                 <a href="https://github.com/AT95BL/Linux-Monitor" target="_blank">
-                    <b>Linux-Monitor:</b></a> A full-stack, real-time system monitoring application inspired by
-                professional tools like Zabbix and Prometheus. This project demonstrates the
-                integration of low-level Linux kernel data extraction with modern web technologies
-                and containerization.​
+                    <b>Linux-Monitor:</b>
+                </a>
+                <span class="lang-en">A full-stack, real-time system monitoring application inspired by professional tools like Zabbix and Prometheus. This project demonstrates the integration of low-level Linux kernel data extraction with modern web technologies and containerization.</span>
+                <span class="lang-sr">Full-stack aplikacija za monitoring sistema u realnom vremenu inspirisana profesionalnim alatima kao što su Zabbix i Prometheus. Ovaj projekat demonstrira integraciju niskonivojskog izvlačenja podataka iz Linux kernela sa modernim web tehnologijama i kontejnerizacijom.</span>
             </li>
             <li>
                 <a href="https://github.com/AT95BL/ePJ2" target="_blank">
-                    <b>E-Mobility Rental System:</b></a> Developed a comprehensive Java-based system for
-                managing rentals of electric cars, bicycles, and scooters. Features include real-time
-                vehicle tracking, financial reporting, breakdown management, and a rich GUI
-                (JavaFX/Swing) for visualizing operations.​
+                    <b>E-Mobility Rental System:</b>
+                </a>
+                <span class="lang-en">Developed a comprehensive Java-based system for managing rentals of electric cars, bicycles, and scooters. Features include real-time vehicle tracking, financial reporting, breakdown management, and a rich GUI (JavaFX/Swing) for visualizing operations.</span>
+                <span class="lang-sr">Razvio sveobuhvatan sistem zasnovan na Javi za upravljanje iznajmljivanjem električnih automobila, bicikala i trotineta. Funkcije uključuju praćenje vozila u realnom vremenu, finansijsko izvještavanje, upravljanje kvarovima i bogat GUI (JavaFX/Swing) za vizuelizaciju operacija.</span>
             </li>
             <li>
                 <a href="https://github.com/AT95BL/JGraphs-Route-Planner" target="_blank">
-                    <b>JGraph:</b></a> Developed a Java-based application for optimal route finding in a
-                transportation network, implementing Dijkstra's algorithm. The system calculated
-                shortest paths based on time, cost, and transfers, visualized through an interactive
-                Java Swing GUI with a grid-based map displaying optimal and alternative routes.
-                The project also included data persistence using JSON for loading and generating
-                network data. Additionally, it integrated functionalities like ticket purchasing, receipt
-                generation, and sales tracking, demonstrating practical application of graph
-                algorithms in a simulated business environment.
+                    <b>JGraph:</b>
+                </a>
+                <span class="lang-en">Developed a Java-based application for optimal route finding in a transportation network, implementing Dijkstra's algorithm. The system calculated shortest paths based on time, cost, and transfers, visualized through an interactive Java Swing GUI with a grid-based map displaying optimal and alternative routes. The project also included data persistence using JSON for loading and generating network data. Additionally, it integrated functionalities like ticket purchasing, receipt generation, and sales tracking, demonstrating practical application of graph algorithms in a simulated business environment.</span>
+                <span class="lang-sr">Razvio aplikaciju zasnovanu na Javi za pronalaženje optimalnih ruta u transportnoj mreži, implementirajući Dijkstra algoritam. Sistem je računao najkraće puteve na osnovu vremena, troškova i presjedanja, vizuelizovan kroz interaktivni Java Swing GUI sa mapom koja prikazuje optimalne i alternativne rute. Projekat je takođe uključivao perzistenciju podataka koristeći JSON za učitavanje i generisanje podataka o mreži. Pored toga, integrisane su funkcionalnosti kao što su kupovina karata, generisanje računa i praćenje prodaje, demonstrirajući praktičnu primjenu grafovskih algoritama u simuliranom poslovnom okruženju.</span>
             </li>
             <li>
                 <a href="https://github.com/AT95BL/Inventory-Management-System" target="_blank">
-                    <b>Inventory Management System:</b></a> Developed a desktop application to manage
-                inventory, orders, and user accounts. Project highlighted the use of C# Windows
-                Forms for the GUI and leveraged MySQL Stored Procedures and Triggers for
-                efficient execution of core business logic and automated stock control.​
+                    <b>Inventory Management System:</b>
+                </a>
+                <span class="lang-en">Developed a desktop application to manage inventory, orders, and user accounts. Project highlighted the use of C# Windows Forms for the GUI and leveraged MySQL Stored Procedures and Triggers for efficient execution of core business logic and automated stock control.</span>
+                <span class="lang-sr">Razvio desktop aplikaciju za upravljanje inventarom, narudžbama i korisničkim nalozima. Projekat je istakao upotrebu C# Windows Forms za GUI i koristio MySQL uskladištene procedure i triggere za efikasno izvršavanje osnovne poslovne logike i automatizovanu kontrolu zaliha.</span>
             </li>
             <li>
                 <a href="https://github.com/AT95BL/eVoting" target="_blank">
-                    <strong>eVoting - Secured eVoting Management System: </strong></a>
-                    Secure E-Voting System Developed a Java-based electronic voting application utilizing a two-tier Public Key Infrastructure (PKI) to ensure voter authenticity and data integrity. 
-                    Implemented digital certificates (X.509) for secure authentication and utilized Bouncy Castle for advanced cryptographic operations, 
-                    including digital signatures and CRL management.
+                    <strong>eVoting - Secured eVoting Management System: </strong>
+                </a>
+                <span class="lang-en">Secure E-Voting System Developed a Java-based electronic voting application utilizing a two-tier Public Key Infrastructure (PKI) to ensure voter authenticity and data integrity. Implemented digital certificates (X.509) for secure authentication and utilized Bouncy Castle for advanced cryptographic operations, including digital signatures and CRL management.</span>
+                <span class="lang-sr">Siguran sistem za elektronsko glasanje. Razvijena aplikacija za elektronsko glasanje zasnovana na Javi koja koristi dvo-stepenu infrastrukturu javnog ključa (PKI) kako bi se osigurala autentičnost glasača i integritet podataka. Implementirani digitalni sertifikati (X.509) za sigurnu autentifikaciju i korišten Bouncy Castle za napredne kriptografske operacije, uključujući digitalne potpise i upravljanje CRL listama.</span>
             </li>
             <li>
-                <a href="https://github.com/AT95BL/At95-Shell" target="_blank"><strong>
-                    At95-Shell: Minimalist Linux Command Interpreter:</strong></a>
-                    A lightweight, functional Unix shell written in C. 
-                    This project demonstrates core systems programming concepts, including process lifecycle management, inter-process communication (IPC), and low-level file descriptor manipulation.
+                <a href="https://github.com/AT95BL/At95-Shell" target="_blank">
+                    <strong>At95-Shell: Minimalist Linux Command Interpreter:</strong>
+                </a>
+                <span class="lang-en">A lightweight, functional Unix shell written in C. This project demonstrates core systems programming concepts, including process lifecycle management, inter-process communication (IPC), and low-level file descriptor manipulation.</span>
+                <span class="lang-sr">Lagani, funkcionalni Unix shell napisan u C-u. Ovaj projekat demonstrira osnovne koncepte sistemskog programiranja, uključujući upravljanje životnim ciklusom procesa, inter-procesnu komunikaciju (IPC) i niskonivojsku manipulaciju deskriptorima fajlova.</span>
             </li>
         </ul>
     </div>
+    
     <hr/>
 
     <div id="languages">
-        <h2>🌐Languages</h2>
+        <h2 class="lang-en">🌐Languages</h2>
+        <h2 class="lang-sr">🌐Jezici</h2>
         <ul>
-            <li>English – Professional proficiency</li>
-            <li>Serbian/Bosnian/Croatian – Native</li>
-            <li>German -currently learning</li>
+            <li class="lang-en">English – Professional proficiency</li>
+            <li class="lang-sr">Engleski – Profesionalni nivo</li>
+            <li class="lang-en">Serbian/Bosnian/Croatian – Native</li>
+            <li class="lang-sr">Srpski/Bošnjački/Hrvatski – Maternji</li>
+            <li class="lang-en">German - currently learning</li>
+            <li class="lang-sr">Njemački - trenutno učim</li>
         </ul>
     </div>
     <hr/>
 
     <div id="hobbies-interests">
-        <h2>🎯Hobbies & Interests</h2>
+        <h2 class="lang-en">🎯Hobbies & Interests</h2>
+        <h2 class="lang-sr">🎯Hobiji i interesovanja</h2>
         <ul>
-            <li><strong>Mixed Martial Arts:</strong>
-            <ul>
-                <li>Judo</li>
-                <li>Boxing</li>
-                <li>Kickboxing</li>
-            </ul>
+            <li><strong><span class="lang-en">Mixed Martial Arts:</span><span class="lang-sr">Borilačke vještine:</span></strong>
+                <ul>
+                    <li class="lang-en">Judo, Boxing, Kickboxing</li>
+                    <li class="lang-sr">Džudo, Boks, Kik-boks</li>
+                </ul>
             </li>
-            <li>Guitar Playing</li>
+            <li class="lang-en">Guitar Playing</li>
+            <li class="lang-sr">Sviranje gitare</li>
         </ul>
     </div>
     <hr/>
 
     <div id="looking-for">
-        <h2>📈Looking For</h2>
-        <p><b>Internship</b> or <b>job opportunities</b> in software development, embedded systems,
-            web development, or related fields.</p>
+        <h2 class="lang-en">📈Looking For</h2>
+        <h2 class="lang-sr">📈Tražim</h2>
+        <p class="lang-en"><b>Internship</b> or <b>job opportunities</b> in software development.</p>
+        <p class="lang-sr"><b>Praksu</b> ili <b>poslovne prilike</b> u razvoju softvera.</p>
     </div>
     <hr/>
 
     <footer>
         <ul>
-            <button><li><a href="./aboutMe.html" target="_blank">About Me</a></li></button>
-            <button><li><a href="./contact.html" target="_blank">Contact</a></li></button>
-            <button onclick="window.print()" class="no-print"><li><a>🖨️ Download PDF Version</a></li></button>
+            <button><li><a href="./aboutMe.html" target="_blank"><span class="lang-en">About Me</span><span class="lang-sr">O meni</span></a></li></button>
+            <button><li><a href="./contact.html" target="_blank"><span class="lang-en">Contact</span><span class="lang-sr">Kontakt</span></a></li></button>
+            <button onclick="window.print()" class="no-print"><li><a>🖨️ <span class="lang-en">Download PDF</span><span class="lang-sr">Preuzmi PDF</span></a></li></button>
         </ul>
     </footer>
 </body>

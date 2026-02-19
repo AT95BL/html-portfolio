@@ -8,61 +8,105 @@
 </head>
 <body>
     <div id="about-header">
-        <h1>About Me</h1>
+        <h1 class="lang-en">About Me</h1>
+        <h1 class="lang-sr">O meni</h1>
     </div>
 
+    <button id="lang-toggle" style="position: fixed; top: 20px; right: 80px; padding: 10px; cursor: pointer; border-radius: 8px;">SR | EN</button>
     <button id="theme-toggle" style="position: fixed; top: 20px; right: 20px; padding: 10px; cursor: pointer; border-radius: 50%;">🌓</button>
 
-        <script>
-            const btn = document.getElementById("theme-toggle");
-            const htmlElement = document.documentElement;
+    <script>
+        const btn = document.getElementById("theme-toggle");
+        const langBtn = document.getElementById("lang-toggle");
+        const htmlElement = document.documentElement;
 
-            // 1. Check for saved theme on page load
-            const savedTheme = localStorage.getItem("theme") || "light";
-            htmlElement.setAttribute("data-theme", savedTheme);
+        // 1. Theme Logic
+        const savedTheme = localStorage.getItem("theme") || "light";
+        htmlElement.setAttribute("data-theme", savedTheme);
 
-            // 2. Toggle theme and save preference
-            if (btn) {
-                btn.addEventListener("click", () => {
-                    const currentTheme = htmlElement.getAttribute("data-theme");
-                    const targetTheme = currentTheme === "dark" ? "light" : "dark";
-                    
-                    htmlElement.setAttribute("data-theme", targetTheme);
-                    localStorage.setItem("theme", targetTheme); // Save it!
-                });
-            }
-        </script>
+        if (btn) {
+            btn.addEventListener("click", () => {
+                const currentTheme = htmlElement.getAttribute("data-theme");
+                const targetTheme = currentTheme === "dark" ? "light" : "dark";
+                htmlElement.setAttribute("data-theme", targetTheme);
+                localStorage.setItem("theme", targetTheme);
+            });
+        }
+
+        // 2. Language Logic
+        const savedLang = localStorage.getItem("language") || "en";
+        htmlElement.setAttribute("data-lang", savedLang);
+
+        if (langBtn) {
+            langBtn.addEventListener("click", () => {
+                const currentLang = htmlElement.getAttribute("data-lang");
+                const targetLang = currentLang === "en" ? "sr" : "en";
+                htmlElement.setAttribute("data-lang", targetLang);
+                localStorage.setItem("language", targetLang);
+            });
+        }
+    </script>
 
     <div id="education-story">
-        <h2>Schooling and 🎓Education</h2>
-        <p>After finishing elementary school in Banja Luka, I wasn’t quite sure which path to take next.
+        <h2 class="lang-en">Schooling and 🎓Education</h2>
+        <h2 class="lang-sr">Školovanje i 🎓Obrazovanje</h2>
+        <p class="lang-en">
+            After finishing elementary school in Banja Luka, I wasn’t quite sure which path to take next.
             For some reason, I decided to pursue economics and enrolled at Pitagora High School in Odžaci,
             where I completed my studies as an economics technician. However, I didn’t feel fulfilled in economics,
             and soon started exploring other options. I considered a career in law enforcement due to my lifelong passion for martial arts.
             Yet, something shifted, and I chose to study at the Faculty of Electrical Engineering in Banja Luka,
             specializing in Software Engineering under the Department of Computing and Informatics.
             Currently, I’m in my third year of undergraduate studies and feel confident that I’ve chosen the right field,
-            as I enjoy learning new technologies and working with programming..
+            as I enjoy learning new technologies and working with programming.
+        </p>
+        <p class="lang-sr">
+            Nakon završetka osnovne škole u Banjoj Luci, nisam bio sasvim siguran kojim putem da krenem.
+            Iz nekog razloga, odlučio sam se za ekonomiju i upisao Srednju školu „Pitagora“ u Odžacima,
+            gdje sam stekao zvanje ekonomskog tehničara. Međutim, nisam se osjećao ispunjenim u ekonomiji,
+            pa sam ubrzo počeo istraživati druge opcije. Razmišljao sam o karijeri u policiji zbog svoje cjeloživotne strasti prema borilačkim vještinama.
+            Ipak, dogodio se preokret i odabrao sam studije na Elektrotehničkom fakultetu u Banjoj Luci,
+            smjer Softversko inženjerstvo na odsjeku za Računarstvo i informatiku.
+            Trenutno sam na trećoj godini osnovnih studija i uvjeren sam da sam odabrao pravu oblast,
+            jer uživam u učenju novih tehnologija i radu sa programiranjem.
         </p>
     </div>
 
     <div id="current-endeavors">
-        <h2>Currently</h2>
-        <p>"After mastering the fundamentals of C/C++ and Java at the Faculty of Electrical Engineering (ETF UNIBL), where I developed a passion for memory management and high-performance systems, 
+        <h2 class="lang-en">Currently</h2>
+        <h2 class="lang-sr">Trenutno</h2>
+        <p class="lang-en">
+            "After mastering the fundamentals of C/C++ and Java at the Faculty of Electrical Engineering (ETF UNIBL), where I developed a passion for memory management and high-performance systems, 
             I decided to broaden my horizons toward modern Web Technologies.
             My academic background in computer architecture and networks provided a solid base, but I am now focused on integrating those low-level insights with a modern full-stack approach. Through independent learning and hands-on projects, I have gained proficiency in React, Node.js, and Docker.
             Following a productive DevOps internship at m:tel, where I applied my knowledge in a professional environment, my current goal is to find a dedicated team and mentor. I am eager to apply my diverse skill set—ranging from system-level optimization to real-time web applications—to impactful real-world projects as I complete my final year of studies."
         </p>
+        <p class="lang-sr">
+            "Nakon savladavanja osnova C/C++ i Jave na Elektrotehničkom fakultetu (ETF UNIBL), gdje sam razvio strast prema upravljanju memorijom i sistemima visokih performansi,
+            odlučio sam proširiti vidike prema modernim Web tehnologijama.
+            Moja akademska podloga u arhitekturi računara i mrežama pružila je čvrstu osnovu, ali sam sada fokusiran na integraciju tih niskonivojskih uvida sa modernim full-stack pristupom. Kroz samostalno učenje i praktične projekte, stekao sam vještine u radu sa React-om, Node.js-om i Docker-om.
+            Nakon produktivne prakse u oblasti DevOps-a u kompaniji m:tel, gdje sam primijenio svoje znanje u profesionalnom okruženju, moj trenutni cilj je pronaći posvećen tim i mentora. Željan sam da primijenim svoj raznolik skup vještina — od optimizacije na sistemskom nivou do web aplikacija u realnom vremenu — na značajne projekte u stvarnom svijetu dok privodim kraju završnu godinu studija."
+        </p>
     </div>
 
     <div id="personal-interests">
-        <h2>No man has rights to be an amateur when it comes to physical training..</h2>
-        <p>For eight years, I trained in judo, a sport that has helped me develop discipline and resilience.
+        <h2 class="lang-en">No man has rights to be an amateur when it comes to physical training..</h2>
+        <h2 class="lang-sr">Nema izgovora..</h2>
+        <p class="lang-en">
+            For eight years, I trained in judo, a sport that has helped me develop discipline and resilience.
             Although I no longer train as intensely, I occasionally refresh my skills.
             After judo, I moved on to kickboxing, a sport I still train in regularly, along with weightlifting at the gym.
             Physical activity is more than a hobby for me – it’s a way of life.
             Besides martial arts, I have a creative hobby – playing the guitar.
             Music is a great way to relax and connect with others, helping me find a balance between intellectual and physical pursuits.
+        </p>
+        <p class="lang-sr">
+            Osam godina sam trenirao džudo, sport koji mi je pomogao da razvijem disciplinu i otpornost.
+            Iako više ne treniram tako intenzivno, povremeno obnavljam svoje vještine.
+            Nakon džudoa, prešao sam na kik-boks, sport koji i dalje redovno treniram, uz vježbanje u teretani.
+            Fizička aktivnost je za mene više od hobija – to je način života.
+            Pored borilačkih vještina, imam i kreativan hobi – sviranje gitare.
+            Muzika je odličan način za opuštanje i povezivanje sa drugima, pomažući mi da pronađem balans između intelektualnih i fizičkih napora.
         </p>
     </div>
 </body>
