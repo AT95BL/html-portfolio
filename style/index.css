@@ -17,13 +17,13 @@
     --accent-color: #3793ff;
 }
 
-/* Language Toggle Logic */
+/* Language Toggle Logic - FORCED HIDE */
 [data-lang="sr"] .lang-en {
-    display: none;
+    display: none !important;
 }
 
 [data-lang="en"] .lang-sr {
-    display: none;
+    display: none !important;
 }
 
 /* Style for the language button */
