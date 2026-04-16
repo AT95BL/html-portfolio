@@ -1,62 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./style/contact.css">
-    <title>Contact</title>
+    <title>Contact — Andrej Trožić</title>
 </head>
 <body>
-    <div id="contact-header">
-        <h1>Let's get in touch:</h1>
+
+<nav id="navbar">
+    <a href="./index.html" class="nav-logo">AT<span>·</span>95</a>
+    <div class="nav-actions">
+        <button class="btn-nav" id="theme-toggle">🌓</button>
+    </div>
+</nav>
+
+<script>
+    const html = document.documentElement;
+    html.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
+
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+        const t = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', t);
+        localStorage.setItem('theme', t);
+    });
+</script>
+
+<div class="contact-wrap">
+    <h1 class="contact-title">Let's connect</h1>
+    <p class="contact-subtitle">Open to internship &amp; junior roles · Banja Luka, RS</p>
+
+    <div class="contact-links">
+
+        <a href="https://github.com/AT95BL" target="_blank" class="contact-link link-github">
+            <span class="contact-link-icon"><i class="fa-brands fa-github"></i></span>
+            GitHub — AT95BL
+        </a>
+
+        <a href="https://www.linkedin.com/in/andrej-tro%C5%BEi%C4%87-57957122b/" target="_blank" class="contact-link link-linkedin">
+            <span class="contact-link-icon"><i class="fa-brands fa-linkedin"></i></span>
+            LinkedIn Profile
+        </a>
+
+        <a href="https://linktr.ee/at95" target="_blank" class="contact-link link-linktree">
+            <span class="contact-link-icon"><i class="fa-solid fa-tree"></i></span>
+            Linktree — @at95
+        </a>
+
+        <a href="https://www.frontendmentor.io/profile/AT95BL" target="_blank" class="contact-link link-frontend">
+            <span class="contact-link-icon"><i class="fa-solid fa-code"></i></span>
+            Frontend Mentor
+        </a>
+
     </div>
 
-    <button id="theme-toggle" style="position: fixed; top: 20px; right: 20px; padding: 10px; cursor: pointer; border-radius: 50%;">🌓</button>
+    <a href="./index.html" class="back-link">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Portfolio
+    </a>
+</div>
 
-        <script>
-            const btn = document.getElementById("theme-toggle");
-            const htmlElement = document.documentElement;
-
-            // 1. Check for saved theme on page load
-            const savedTheme = localStorage.getItem("theme") || "light";
-            htmlElement.setAttribute("data-theme", savedTheme);
-
-            // 2. Toggle theme and save preference
-            if (btn) {
-                btn.addEventListener("click", () => {
-                    const currentTheme = htmlElement.getAttribute("data-theme");
-                    const targetTheme = currentTheme === "dark" ? "light" : "dark";
-                    
-                    htmlElement.setAttribute("data-theme", targetTheme);
-                    localStorage.setItem("theme", targetTheme); // Save it!
-                });
-            }
-        </script>
-
-    <div id="contact-links">
-        <ul>
-            <li>
-                <a href="https://github.com/settings/profile" target="_blank">
-                    <i class="fa-brands fa-github"></i> GitHub Profile
-                </a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/andrej-tro%C5%BEi%C4%87-57957122b/" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
-                </a>
-            </li>
-            <li>
-                <a href="https://linktr.ee/at95" target="_blank">
-                    <i class="fa-solid fa-tree"></i> Linktree Profile
-                </a>
-            </li>
-            <li>
-                <a href="https://www.frontendmentor.io/profile/AT95BL" target="_blank">
-                    <i class="fa-solid fa-code"></i> Frontend Mentor
-                </a>
-            </li>
-        </ul>
-    </div>
 </body>
 </html>
