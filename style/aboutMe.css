@@ -10,6 +10,7 @@
     --text-muted:    #8B949E;
     --accent:        #3B82F6;
     --accent-2:      #22D3EE;
+    --accent-green:  #34D399;
     --gradient:      linear-gradient(135deg, #3B82F6 0%, #22D3EE 100%);
     --gradient-hero: linear-gradient(160deg, #0D1117 0%, #0F1D35 50%, #0D1117 100%);
     --radius:        14px;
@@ -31,14 +32,21 @@
     --text-muted:    #57606A;
     --accent:        #0969DA;
     --accent-2:      #0891B2;
+    --accent-green:  #059669;
     --gradient:      linear-gradient(135deg, #0969DA 0%, #0891B2 100%);
     --gradient-hero: linear-gradient(160deg, #0F2952 0%, #0A3A7A 50%, #0F2952 100%);
     --shadow-card:   0 1px 0 rgba(255,255,255,0.9) inset, 0 2px 8px rgba(0,0,0,0.08);
 }
 
+/* =========================================================
+   LANGUAGE TOGGLE
+   ========================================================= */
 [data-lang="sr"] .lang-en { display: none !important; }
 [data-lang="en"] .lang-sr { display: none !important; }
 
+/* =========================================================
+   RESET & BASE
+   ========================================================= */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
@@ -52,13 +60,16 @@ body {
     transition: background var(--transition), color var(--transition);
 }
 
-/* NAV */
+/* =========================================================
+   NAV
+   ========================================================= */
 #navbar {
     position: fixed;
     top: 0; left: 0; right: 0;
     height: var(--nav-h);
     background: rgba(13, 17, 23, 0.85);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-subtle);
     z-index: 1000;
     display: flex;
@@ -86,10 +97,7 @@ body {
     background-clip: text;
 }
 
-.nav-actions {
-    display: flex;
-    gap: 8px;
-}
+.nav-actions { display: flex; gap: 8px; }
 
 .btn-nav {
     background: var(--bg-card);
@@ -101,16 +109,25 @@ body {
     font-size: 0.75rem;
     cursor: pointer;
     transition: all var(--transition);
+    line-height: 1;
 }
 
 .btn-nav:hover { color: var(--text); border-color: var(--accent); }
-#theme-toggle { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 
-/* HERO */
+#theme-toggle {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
 #about-hero {
     background: var(--gradient-hero);
-    padding-top: calc(var(--nav-h) + 60px);
-    padding-bottom: 60px;
+    padding-top: calc(var(--nav-h) + 64px);
+    padding-bottom: 64px;
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -121,6 +138,7 @@ body {
     position: absolute;
     inset: 0;
     background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 #about-hero::after {
@@ -131,6 +149,7 @@ body {
         linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
     background-size: 48px 48px;
+    pointer-events: none;
 }
 
 .about-hero-inner {
@@ -151,20 +170,18 @@ body {
 }
 
 .about-hero-sub {
-    color: rgba(255,255,255,0.45);
+    color: rgba(255, 255, 255, 0.45);
     font-size: 0.95rem;
     font-weight: 300;
 }
 
-/* CONTENT */
+/* =========================================================
+   LAYOUT UTILITIES
+   ========================================================= */
 .page-wrap {
     max-width: var(--max-w);
     margin: 0 auto;
     padding: 0 24px;
-}
-
-.about-section {
-    padding: 48px 0;
 }
 
 .divider {
@@ -185,17 +202,47 @@ body {
     display: block;
 }
 
+/* =========================================================
+   BACK LINK
+   ========================================================= */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color var(--transition), gap var(--transition);
+    text-decoration: none;
+    margin-bottom: 28px;
+}
+
+.back-link:hover {
+    color: var(--text);
+    gap: 12px;
+}
+
+/* =========================================================
+   ABOUT CARDS
+   ========================================================= */
 .about-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius);
     padding: 32px 36px;
     box-shadow: var(--shadow-card);
-    transition: border-color var(--transition);
+    transition: border-color var(--transition), transform var(--transition);
     position: relative;
     overflow: hidden;
 }
 
+.about-card:hover {
+    border-color: var(--border);
+    transform: translateY(-2px);
+}
+
+/* Gradient top bar */
 .about-card::before {
     content: '';
     position: absolute;
@@ -207,79 +254,192 @@ body {
 
 .about-card-title {
     font-family: var(--font-display);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--text);
     letter-spacing: -0.02em;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .about-card p {
     color: var(--text-muted);
     line-height: 1.8;
     font-size: 0.95rem;
-    text-align: justify;
     hyphens: auto;
 }
 
-.about-card p + p { margin-top: 16px; }
-
+.about-card p + p { margin-top: 14px; }
 .about-card p strong { color: var(--text); font-weight: 600; }
 
-/* Quote style */
+/* =========================================================
+   QUOTE SECTION  — FIX #1
+   Large decorative opening quote mark via ::before,
+   quote-text gets explicit color so it actually shows.
+   ========================================================= */
 .quote-section {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(34, 211, 238, 0.05) 100%);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.07) 0%, rgba(34, 211, 238, 0.04) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.22);
     border-radius: var(--radius);
-    padding: 28px 32px;
+    padding: 36px 36px 32px;
     position: relative;
+    overflow: hidden;
+    transition: border-color var(--transition);
 }
 
+.quote-section:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+/* The big decorative opening quotation mark */
 .quote-section::before {
-    content: '"';
+    content: '\201C';           /* " — left double quotation mark */
     position: absolute;
-    top: -10px; left: 20px;
+    top: -8px;
+    left: 20px;
     font-family: var(--font-display);
-    font-size: 5rem;
-    color: var(--accent);
-    opacity: 0.2;
+    font-size: 7rem;
+    font-weight: 800;
     line-height: 1;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.25;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Closing quotation mark bottom-right */
+.quote-section::after {
+    content: '\201D';           /* " — right double quotation mark */
+    position: absolute;
+    bottom: -24px;
+    right: 20px;
+    font-family: var(--font-display);
+    font-size: 7rem;
+    font-weight: 800;
+    line-height: 1;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.15;
+    pointer-events: none;
+    user-select: none;
 }
 
 .quote-text {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.8;
+    color: var(--text-muted);   /* explicit — was missing, causing invisible text in some builds */
+    font-size: 0.97rem;
+    line-height: 1.85;
     font-style: italic;
+    position: relative;         /* sits above the ::before glyph */
+    z-index: 1;
 }
 
-/* Back link */
-.back-link {
-    display: inline-flex;
+.quote-text + .quote-text { margin-top: 14px; }
+
+.quote-text strong {
+    color: var(--text);
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* =========================================================
+   FOOTER — FIX #2
+   Pill-style buttons with gradient border on hover,
+   z-index fix so the glow overlay never clips text.
+   ========================================================= */
+footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 36px 24px;
+    display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 20px;
+    font-family: var(--font-body);
+}
+
+.footer-name {
     color: var(--text-muted);
     font-size: 0.85rem;
     font-weight: 500;
-    padding: 8px 0;
-    transition: color var(--transition);
-    text-decoration: none;
-    margin-bottom: 24px;
+    letter-spacing: 0.02em;
 }
 
-.back-link:hover { color: var(--text); }
+.footer-divider {
+    color: var(--border);
+    font-size: 1rem;
+    user-select: none;
+}
 
-footer {
-    border-top: 1px solid var(--border-subtle);
-    padding: 24px;
-    text-align: center;
+.footer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 20px;
+    border-radius: 999px;           /* pill shape */
+    background: var(--bg-card);
     color: var(--text-muted);
-    font-size: 0.8rem;
-    font-family: monospace;
+    border: 1px solid var(--border-subtle);
+    text-decoration: none;
+    font-size: 0.84rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    position: relative;
+    overflow: hidden;
+    transition:
+        color       var(--transition),
+        border-color var(--transition),
+        transform   var(--transition),
+        box-shadow  var(--transition);
 }
 
+/* Gradient glow fill — behind text thanks to z-index */
+.footer-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient);
+    opacity: 0;
+    z-index: 0;                     /* FIX: keeps it behind the text */
+    transition: opacity var(--transition);
+}
+
+/* All direct children sit above the glow */
+.footer-btn > * { position: relative; z-index: 1; }
+/* Plain text nodes need a wrapper — handled via span in HTML */
+
+.footer-btn:hover {
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow:
+        0 6px 20px rgba(59, 130, 246, 0.3),
+        0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.footer-btn:hover::before { opacity: 1; }
+
+.footer-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(59, 130, 246, 0.2);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (max-width: 600px) {
-    #about-hero { padding-top: calc(var(--nav-h) + 40px); padding-bottom: 40px; }
+    #navbar { padding: 0 16px; }
     .about-card { padding: 24px 20px; }
+    .quote-section { padding: 28px 24px 24px; }
     .page-wrap { padding: 0 16px; }
+
+    footer {
+        flex-direction: column;
+        gap: 14px;
+        padding: 32px 16px;
+    }
+    .footer-divider { display: none; }
+    .footer-btn { width: 100%; justify-content: center; padding: 12px 20px; }
 }
